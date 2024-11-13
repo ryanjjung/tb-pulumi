@@ -56,13 +56,13 @@ jobs:
 
           # Move the build files into a location where we can compile multiple build outputs
           mkdir -p _build/compiled_html/dark
-          mv _build/html/* _build/compiled_html/
+          cp -r _build/html/* _build/compiled_html/
 
           # Build again with the dark theme
           TBPULUMI_DARK_MODE=yes make clean html
 
           # Move the dark theme files into a special directory
-          mv _build/html/* _build/compiled_html/dark/
+          cp -r _build/html/* _build/compiled_html/dark/
 
           # Compress for archival
           cd _build/compiled_html
